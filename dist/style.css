@@ -1,0 +1,77 @@
+
+.container {
+    background-color: rgb(215, 227, 250);
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 10px;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: rgb(131, 131, 248);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 3px rgb(129, 129, 129);
+}
+
+.title {
+    color: whi;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+}
+.titledescription {
+    font-size: 0.9rem;
+    font-family: monospace;
+    color: rgb(203, 228, 250);
+}
+
+.content {
+    margin-top: 17px;
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.leftpanel {
+    background-color: rgb(204, 204, 206);
+    padding: 20px;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 4px 4px 3px rgb(129, 129, 129);
+}
+
+.heading {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.projectsheading {
+    margin-top: 40px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 12px;
+    transition: 0.3s;
+}
+
+.option:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+svg {
+    width: 25px;
+}
+
+.rightpanel {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 4px 4px 3px rgb(129, 129, 129);
+}
