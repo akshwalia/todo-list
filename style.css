@@ -139,6 +139,18 @@ svg {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 5fr;
+}
+
+.task>* {
+    margin: 2px;
+    background-color: gray;
+    border-radius: 3px;
 }
 
 .rightpanel input,
