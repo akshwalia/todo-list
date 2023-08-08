@@ -1,5 +1,6 @@
 import { tasks } from "./index";
 import { addTaskObject } from "./taskManipulation";
+import updatePanel from "./updatingTasks";
 
 const container = document.querySelector('.rightpanel');
 const heading = document.querySelector('.rightpanelheading');
@@ -15,7 +16,7 @@ const popup = document.querySelector('.popupcontainer');
 let present = true;
 
 
-function addTaskPopup(name) {
+function addTaskPopup() {
     present = true;
 
     popup.classList.remove('hidden');
@@ -39,9 +40,10 @@ function addTaskPopup(name) {
 
     //sends for object creation and addition
     add.addEventListener('click', () => {
-        addTaskObject(name);
+        addTaskObject();
         popup.classList.add('hidden');
         present = false;
+        updatePanel();
     });
 
     //cancel button removes the overlay
@@ -69,7 +71,7 @@ function addTaskPopup(name) {
     });
 }
 
-export default function displayProjectPage(name) {
+export default function displayStartProjectPage(name) {
     heading.innerHTML = `${name}`;
     taskcontainer.innerHTML = "yayyy you created project";
 
@@ -79,12 +81,7 @@ export default function displayProjectPage(name) {
     }
 
     addTask.addEventListener('click', () => {
-        addTaskPopup(name);
+        addTaskPopup();
     });
 
-    if(tasks) {
-        for(let task of tasks) {
-            console.log(task);
-        }
-    }
 }

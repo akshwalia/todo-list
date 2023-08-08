@@ -1,5 +1,5 @@
 import { colors } from "./index";
-import displayProjectPage from "./projectPage";
+import displayStartProjectPage from "./projectPage";
 
 let i=0;
 
@@ -11,9 +11,14 @@ function removeSelectedClass() {
     });
 }
 
+function removeActiveClass() {
+    document.querySelector('.active').classList.remove('active');
+}
+
 const projectContainer = document.querySelector('.projectcontainer');
 
 let notPresent = true;
+let first=true;
 
 function addNewProject() {
     if (notPresent) {
@@ -54,13 +59,19 @@ function addNewProject() {
                 option.appendChild(projectname);
 
                 projectContainer.appendChild(option);
+                
 
                 options = document.querySelectorAll('.option');
 
                 removeSelectedClass();
+                if(!first) {
+                    removeActiveClass();
+                }
                 option.classList.add('selected');
-
-                displayProjectPage(inputbox.value);
+                projectname.classList.add('active');
+                
+                first=false;
+                displayStartProjectPage(inputbox.value);
                 
                 done =true;
 
@@ -70,8 +81,11 @@ function addNewProject() {
 
         option.addEventListener('click', () => {
             removeSelectedClass();
+            removeActiveClass();
             option.classList.add('selected');
-            displayProjectPage(inputbox.value);
+            projectname.classList.add('active');
+    
+            displayStartProjectPage(document.querySelector('.active').innerHTML);
         })
     }
     else {
@@ -80,4 +94,4 @@ function addNewProject() {
     }
 }
 
-export {removeSelectedClass,addNewProject,notPresent};
+export {removeSelectedClass,addNewProject};

@@ -1,21 +1,22 @@
 import { tasks } from "./index";
+import updatePanel from "./updatingTasks";
+
+
 function createTaskObject(name, projectname, priority, date, completed) {
     return { name, projectname, priority, date, completed };
 }
 
-function addTaskObject(projectname) {
+function addTaskObject() {
+    const currentlySelectedProject = document.querySelector('.active');
+
     const title = document.getElementById('title');
     const priority = document.getElementById('priority');
     const date = document.getElementById('date');
 
-    console.log(title.value + " " + priority.value + " " + date.value);
-
-    const newtask = new createTaskObject(title.value,projectname,priority.value,date.value,'no');
-
-    console.log(newtask);
+    const newtask = new createTaskObject(title.value,currentlySelectedProject.innerHTML,priority.value,date.value,'no');
 
     tasks.push(newtask);
-    
+
     title.value="";
     priority.value="low";
     date.value="";
