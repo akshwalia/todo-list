@@ -66,12 +66,145 @@
     transform: scale(1.1);
     cursor: pointer;
 }
+
+.projecticon {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+}
 svg {
     width: 25px;
+}
+
+.addproject {
+    background-color: rgb(131, 131, 248);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    border: 2px solid rgb(131, 131, 248);
+}
+
+.addproject:hover {
+    border: 2px solid rgb(131, 131, 248);
+    color: rgb(131, 131, 248);
+    background-color: rgb(204, 204, 206);
+    cursor: pointer;
+}
+
+.addprojectfresh {
+    background-color: rgb(131, 131, 248);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    border: 2px solid rgb(131, 131, 248);
+}
+
+.addprojectfresh:hover {
+    border: 2px solid rgb(131, 131, 248);
+    color: rgb(131, 131, 248);
+    background-color: rgb(204, 204, 206);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: rgb(131, 131, 248);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.selected svg {
+    filter: invert();
 }
 
 .rightpanel {
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 4px 4px 3px rgb(129, 129, 129);
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rightpanelheading {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tasks {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightpanel input,
+.rightpanel label {
+    cursor: pointer;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+.popupcontainer {
+    position: absolute;
+    backdrop-filter: blur(1px);
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.formbox {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60vw;
+    display: grid;
+    gap: 22px;
+    grid-template-columns: 1fr 3fr;
+    background-color: rgb(131, 131, 248);
+    padding: 40px;
+    border-radius: 10px;
+    border: 3px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form input {
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    width: 450px;
+}
+
+form #date {
+    width: 130px;
+}
+
+form select {
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    width: 140px;
+}
+
+form input:focus {
+    outline: none;
+}
+.buttons {
+    column-span: 2;
+    display: flex;
+    gap: 10px;
 }
