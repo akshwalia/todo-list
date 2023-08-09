@@ -13,13 +13,16 @@ function displayTasksOnScreen(task) {
     const checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.id = `${i}`;
+    checkbox.classList.add('checkbox');
     const label = document.createElement('label');
     label.setAttribute('for',`${i}`);
     label.innerHTML = `${task.name}`;
     const priority = document.createElement('div');
     priority.innerHTML = `${task.priority}`;
+    priority.classList.add('priority');
     const date = document.createElement('div');
     date.innerHTML = `${task.date}` || '--';
+    date.classList.add('date');
     i++;
 
     taskrow.appendChild(checkbox);
@@ -56,3 +59,5 @@ export default function updatePanel() {
         }
     }
 }
+
+export {displayTasksOnScreen};

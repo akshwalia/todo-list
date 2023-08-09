@@ -8,8 +8,9 @@ const heading = document.querySelector('.rightpanelheading');
 const taskcontainer = document.querySelector('.tasks');
 taskcontainer.innerHTML = "";
 
-const addTask = document.createElement('button');
-addTask.innerHTML = "Add Task";
+const addTask = document.createElement('div');
+addTask.classList.add('addtask');
+addTask.innerHTML = "+";
 let first = true;
 const popup = document.querySelector('.popupcontainer');
 
@@ -73,7 +74,7 @@ function addTaskPopup() {
 
 export default function displayStartProjectPage(name) {
     heading.innerHTML = `${name}`;
-    taskcontainer.innerHTML = "yayyy you created project";
+    taskcontainer.innerHTML = "";
 
     if (first) {
         first = false;

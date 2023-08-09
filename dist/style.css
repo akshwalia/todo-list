@@ -139,18 +139,52 @@ svg {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .task {
     display: grid;
-    grid-template-columns: 1fr 5fr 5fr 5fr;
+    grid-template-columns: 1fr 12fr ;
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+    padding: 20px 5px;
+    border-radius: 8px;
+    background-color: rgb(222, 222, 252);
+    box-shadow: 5px 5px 4px rgb(216, 215, 215);
+    align-items: center;
 }
 
-.task>* {
-    margin: 2px;
-    background-color: gray;
-    border-radius: 3px;
+.checkbox {
+    grid-row-start: span 2;
+    transform: scale(1.5);
+}
+
+.priority {
+    position: absolute;
+    right: 20px;
+    top: 38%;
+}
+
+.date {
+    color: rgb(117, 117, 117);
+    font-size: 15px;
+}
+
+.addtask {
+    background-color: rgb(222, 222, 252);
+    border-radius: 8px;
+    box-shadow: 5px 5px 4px rgb(216, 215, 215);
+    border: none;
+    padding: 16px 0;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(80, 79, 79);
+    margin-top: 15px;
+}
+
+.addtask:hover {
+    background-color: rgb(201, 201, 247);
+    cursor: pointer;
 }
 
 .rightpanel input,
