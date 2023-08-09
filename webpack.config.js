@@ -11,4 +11,13 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
+
+    module: {
+        rules: [
+            {
+                test: /\.svg$/i,
+                type: 'asset/resource',
+            }
+        ],
+    },
 }

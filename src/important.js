@@ -2,15 +2,14 @@ import { addNewProject } from "./addremoveProjects";
 import { tasks } from "./index";
 import { displayTasksOnScreen } from "./updatingTasks";
 
-
 const heading = document.querySelector('.rightpanelheading');
 
 const taskcontainer = document.querySelector('.tasks');
 
-let weekTasks = [];
+let importantTasks = [];
 
-export default function showWeekPage(tasks) {
-    heading.innerHTML = "Tasks for this week";
+export default function showImportantPage(tasks) {
+    heading.innerHTML = "Important Tasks";
     taskcontainer.innerHTML = "";
     if(!tasks.length) {
         taskcontainer.innerHTML = "No Task here, add a project and add tasks to get started"
@@ -22,29 +21,25 @@ export default function showWeekPage(tasks) {
         addproject.addEventListener('click', addNewProject);
     }
     else {
-        weekTasks = [];
         taskcontainer.innerHTML = "";
-        const today = new Date();
-        const day = today.getDay();
+        importantTasks = [];
         
-        const start = today.getTime() - day*86400000;
-        const end = today.getTime() + (7-day)*86400000;
-
         for(let task of tasks) {
             const taskdate = new Date(task.date);
-            if(taskdate.getTime() > start && taskdate.getTime() < end) {
-                weekTasks.push(task);
+            if(task.important == 'yes') {
+                importantTasks.push(task);
             }
         }
 
-        if(!weekTasks.length) {
-            taskcontainer.innerHTML = "No tasks scheduled for this week";
+        if(!importantTasks.length) {
+            taskcontainer.innerHTML = "No tasks marked as important";
         }
         else {
             taskcontainer.innerHTML = "";
-            for(let eachtask of weekTasks) {
+            for(let eachtask of importantTasks) {
                 displayTasksOnScreen(eachtask);
             }
         }
     }
+
 }
