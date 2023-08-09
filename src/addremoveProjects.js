@@ -1,5 +1,6 @@
-import { colors } from "./index";
+import { colors, tasks } from "./index";
 import displayStartProjectPage from "./projectPage";
+import updatePanel from "./updatingTasks";
 
 let i=0;
 
@@ -84,8 +85,11 @@ function addNewProject() {
             removeActiveClass();
             option.classList.add('selected');
             projectname.classList.add('active');
-    
-            displayStartProjectPage(document.querySelector('.active').innerHTML);
+            
+            if(!tasks.length)
+                displayStartProjectPage(document.querySelector('.active').innerHTML);
+            else 
+                updatePanel();
         })
     }
     else {
