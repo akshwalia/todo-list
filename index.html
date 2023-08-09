@@ -19,7 +19,7 @@
         <div class="content">
             <div class="leftpanel">
                 <div class="heading">Tasks</div>
-                
+
                 <div class="option selected" id="today">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <title>calendar-today-outline</title>
@@ -36,20 +36,27 @@
                     </svg>
                     <div class="optionname">This week</div>
                 </div>
-                <div class="option" id="stickywall">
+                <div class="option" id="importantmenu">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <title>view-dashboard-outline</title>
-                        <path
-                            d="M19,5V7H15V5H19M9,5V11H5V5H9M19,13V19H15V13H19M9,17V19H5V17H9M21,3H13V9H21V3M11,3H3V13H11V3M21,11H13V21H21V11M11,15H3V21H11V15Z" />
+                        <title>exclamation</title>
+                        <path d="M 11,4L 13,4L 13,15L 11,15L 11,4 Z M 13,18L 13,20L 11,20L 11,18L 13,18 Z" />
                     </svg>
-                    <div class="optionname">Sticky Wall</div>
+                    <div class="optionname">Important</div>
+                </div>
+                <div class="option" id="completed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>check-all</title>
+                        <path
+                            d="M0.41,13.41L6,19L7.41,17.58L1.83,12M22.24,5.58L11.66,16.17L7.5,12L6.07,13.41L11.66,19L23.66,7M18,7L16.59,5.58L10.24,11.93L11.66,13.34L18,7Z" />
+                    </svg>
+                    <div class="optionname">Completed</div>
                 </div>
 
                 <div class="heading projectsheading">Projects</div>
                 <div class="projectcontainer">
-                    
+
                 </div>
-                
+
                 <div class="addproject">+ Add Project</div>
             </div>
 
@@ -76,21 +83,20 @@
 
         <div class="popupcontainer hidden">
             <div class="formbox">
-                
-                    <label for="title">Title: </label>
-                    <input type="text" name="title" id="title" required>
-    
-                    <label for="priority">Priority:</label>
-                    <select name="priority" id="priority">
-                        <option value="low" checked>Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-    
-                    <label for="date">Date: </label>
-                    <input type="date" id="date">
-    
-                    <div class="buttons"></div>
+
+                <label for="title">Title: </label>
+                <input type="text" name="title" id="title" required>
+
+                <label for="important">Mark as important:</label>
+                <select name="important" id="important">
+                    <option value="no" checked>No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <label for="date">Date: </label>
+                <input type="date" id="date">
+
+                <div class="buttons"></div>
             </div>
         </div>
     </div>

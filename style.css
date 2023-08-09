@@ -159,10 +159,15 @@ svg {
     transform: scale(1.5);
 }
 
-.priority {
+.important {
     position: absolute;
     right: 20px;
     top: 38%;
+    width: 27px;
+}
+
+.important:hover {
+    cursor: pointer;
 }
 
 .date {
