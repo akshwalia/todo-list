@@ -1,11 +1,14 @@
 import { addNewProject } from "./addremoveProjects";
 import { tasks } from "./index";
+import { addTask } from "./projectPage";
 import { displayTasksOnScreen } from "./updatingTasks";
 
 
 const heading = document.querySelector('.rightpanelheading');
 
 const taskcontainer = document.querySelector('.tasks');
+
+const addTaskContainer = document.querySelector('.addtaskcontainer');
 
 let completedTasks = [];
 
@@ -16,6 +19,8 @@ export default function showCompletedPage(tasks) {
         taskcontainer.innerHTML = "No tasks completed";
     }
     else {
+        addTaskContainer.innerHTML = "";
+
         completedTasks = [];
         taskcontainer.innerHTML = "";
 

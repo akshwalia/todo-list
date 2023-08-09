@@ -9,6 +9,8 @@ const taskcontainer = document.querySelector('.tasks');
 
 let weekTasks = [];
 
+const addTaskContainer = document.querySelector('.addtaskcontainer');
+
 export default function showWeekPage(tasks) {
     heading.innerHTML = "Tasks for this week";
     taskcontainer.innerHTML = "";
@@ -22,6 +24,8 @@ export default function showWeekPage(tasks) {
         addproject.addEventListener('click', addNewProject);
     }
     else {
+        addTaskContainer.innerHTML = "";
+        
         weekTasks = [];
         taskcontainer.innerHTML = "";
         const today = new Date();

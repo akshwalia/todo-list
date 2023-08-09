@@ -6,6 +6,8 @@ const heading = document.querySelector('.rightpanelheading');
 
 const taskcontainer = document.querySelector('.tasks');
 
+const addTaskContainer = document.querySelector('.addtaskcontainer');
+
 let importantTasks = [];
 
 export default function showImportantPage(tasks) {
@@ -21,6 +23,8 @@ export default function showImportantPage(tasks) {
         addproject.addEventListener('click', addNewProject);
     }
     else {
+        addTaskContainer.innerHTML = "";
+        
         taskcontainer.innerHTML = "";
         importantTasks = [];
         

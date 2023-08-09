@@ -4,6 +4,7 @@ import updatePanel from "./updatingTasks";
 
 const container = document.querySelector('.rightpanel');
 const heading = document.querySelector('.rightpanelheading');
+const addTaskContainer = document.querySelector('.addtaskcontainer');
 
 const taskcontainer = document.querySelector('.tasks');
 taskcontainer.innerHTML = "";
@@ -65,24 +66,28 @@ function addTaskPopup() {
     formbox.addEventListener('click', (e) => {
         e.stopPropagation();
     });
-     //overlay closes when clicked on background
+    //overlay closes when clicked on background
     popup.addEventListener('click', (e) => {
         e.stopPropagation();
         popup.classList.add('hidden');
     });
 }
 
+function displayAddTask () {
+    addTaskContainer.innerHTML = "";
+    addTaskContainer.appendChild(addTask);
+}
+
 export default function displayStartProjectPage(name) {
     heading.innerHTML = `${name}`;
     taskcontainer.innerHTML = "";
 
-    if (first) {
-        first = false;
-        container.appendChild(addTask);
-    }
+    displayAddTask();
 
     addTask.addEventListener('click', () => {
         addTaskPopup();
     });
 
 }
+
+export { addTask,displayAddTask };

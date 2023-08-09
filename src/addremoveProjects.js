@@ -1,5 +1,5 @@
 import { colors, tasks } from "./index";
-import displayStartProjectPage from "./projectPage";
+import displayStartProjectPage, { displayAddTask } from "./projectPage";
 import updatePanel from "./updatingTasks";
 
 let i=0;
@@ -88,8 +88,10 @@ function addNewProject() {
             
             if(!tasks.length)
                 displayStartProjectPage(document.querySelector('.active').innerHTML);
-            else 
+            else {
+                displayAddTask();
                 updatePanel();
+            }
         })
     }
     else {

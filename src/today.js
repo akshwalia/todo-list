@@ -6,6 +6,8 @@ const heading = document.querySelector('.rightpanelheading');
 
 const taskcontainer = document.querySelector('.tasks');
 
+const addTaskContainer = document.querySelector('.addtaskcontainer');
+
 let todayTasks = [];
 
 export default function showTodayPage(tasks) {
@@ -21,6 +23,8 @@ export default function showTodayPage(tasks) {
         addproject.addEventListener('click', addNewProject);
     }
     else {
+        addTaskContainer.innerHTML = "";
+        
         taskcontainer.innerHTML = "";
         const today = new Date();
         todayTasks = [];
