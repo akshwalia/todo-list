@@ -36,7 +36,7 @@ export default function showWeekPage(tasks) {
 
         for(let task of tasks) {
             const taskdate = new Date(task.date);
-            if(taskdate.getTime() > start && taskdate.getTime() < end) {
+            if(taskdate.getTime() >= start && taskdate.getTime() <= end) {
                 weekTasks.push(task);
             }
         }
